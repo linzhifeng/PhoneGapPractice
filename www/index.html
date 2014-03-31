@@ -28,7 +28,7 @@ ajaxGet = function(url, data, func, sync) {
 	    ajaxGet("http://60.187.3.67:22322/TestWebService.asmx/HelloWorld", null, function(data) {
            alert($(data).find("string").text());
     });
-
+	$("#test").click(function(e){
 		ajaxGet("http://60.187.3.67:22322/TestWebService.asmx/Test", null, function(data) {
 			var d=JSON.parse($(data).find("string").text())
 			for(var i=0;i<4;i++)
@@ -37,7 +37,13 @@ ajaxGet = function(url, data, func, sync) {
 			}
           
     });
-	
+	});
+	$("#sub").click(function(e){
+		ajaxGet("http://60.187.3.67:22322/TestWebService.asmx/Submit", {name:$("#name").val()}, function(data) {
+			var d=JSON.parse($(data).find("string").text());
+			$("#name").html(d);
+    });
+	});
  });
 </script>
 </head>
@@ -47,7 +53,10 @@ ajaxGet = function(url, data, func, sync) {
     </header>
 	<section>
          <p id="p">HelloWorld</p>
-		<input type="button" id="test" text="dfefe" value="stes"  />
+          <input type="text" id="name"/>
+		  <p id="reply"></p>
+		 <input type="button" id="sub" text="dfefe" value="submit"  />
+		<input type="button" id="test" text="dfefe" value="dfjie"  />
 		 <ul id="testul">
 		 <li>test</li>
 		 </ul>
