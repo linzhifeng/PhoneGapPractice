@@ -11,21 +11,6 @@
 <script>
  $(document).ready(function(){
 	    alert("test");
-		$.ajax({
-		"type": "GET",
-		"url": "http://60.187.3.67:22322/TestWebService.asmx/HelloWorld",
-		"data": null,
-		"dataType": "xml",
-		"async": !sync,
-		"timeout": 21000,
-		"global": false,
-		"success": function(date) {
-			alert("success");
-		},
-		"error": function(xhr, type, err) {
-			alert("error");
-		}
-	});
  });
 </script>
 </head>
