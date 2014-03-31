@@ -26,7 +26,7 @@ ajaxGet = function(url, data, func, sync) {
 }
  $(document).ready(function(){
 	    ajaxGet("http://60.187.3.67:22322/TestWebService.asmx/HelloWorld", null, function(data) {
-           alert("dfefdfe");
+           alert($(data).find("string").text());
     });
  });
 </script>
