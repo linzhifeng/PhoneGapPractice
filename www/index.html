@@ -10,8 +10,21 @@
 <script src="cordova.js"></script>
 <script>
  $(document).ready(function(){
-		 alert("dfe");
-		 $("#p").html("dfefefefe");
+		$.ajax({
+		"type": "GET",
+		"url": "http://60.187.3.67:22322/TestWebService.asmx/HelloWorld",
+		"data": null,
+		"dataType": "xml",
+		"timeout": 21000,
+		"global": false,
+		"success": function(date) {
+			alert($(data).find("string").text());
+			$("#p").html(data);
+		},
+		"error": function(xhr, type, err) {
+			alert("error");
+		}
+	});
  });
 </script>
 </head>
