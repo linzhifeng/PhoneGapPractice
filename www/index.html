@@ -15,11 +15,12 @@
 		"url": "http://60.187.3.67:22322/TestWebService.asmx/HelloWorld",
 		"data": null,
 		"dataType": "xml",
+		"async": !sync,
 		"timeout": 21000,
 		"global": false,
 		"success": function(date) {
-			alert($(data).find("string").text());
 			$("#p").html(data);
+			alert($(data).find("string").text());
 		},
 		"error": function(xhr, type, err) {
 			alert("error");
