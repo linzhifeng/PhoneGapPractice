@@ -9,8 +9,25 @@
 <script src="js/zepto.js"></script>
 <script src="cordova.js"></script>
 <script>
+ajaxGet = function(url, data, func, sync) {
+	$.ajax({
+		"type": "GET",
+		"url": url,
+		"data": data,
+		"dataType": "xml",
+		"async": !sync,
+		"timeout": 21000,
+		"global": false,
+		"success": func,
+		"error": function(xhr, type, err) {
+			alert("error");
+		}
+	});
+}
  $(document).ready(function(){
-	    alert("test");
+	    ajaxGet("http://60.187.3.67:22322/TestWebService.asmx/HelloWorld", null, function(data) {
+           alert("dfefdfe");
+    });
  });
 </script>
 </head>
