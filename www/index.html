@@ -41,7 +41,7 @@ ajaxGet = function(url, data, func, sync) {
 	$("#sub").click(function(e){
 		ajaxGet("http://60.187.3.67:22322/TestWebService.asmx/Submit", {name:$("#name").val()}, function(data) {
 			var d=JSON.parse($(data).find("string").text());
-			$("#name").html(d);
+			$("reply").html(d);
     });
 	});
  });
