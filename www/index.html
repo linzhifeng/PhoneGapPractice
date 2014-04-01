@@ -25,11 +25,11 @@ ajaxGet = function(url, data, func, sync) {
 	});
 }
  $(document).ready(function(){
-	    ajaxGet("http://60.187.3.67:22322/TestWebService.asmx/HelloWorld", null, function(data) {
+	    ajaxGet("http://60.187.2.6:22322/TestWebService.asmx/HelloWorld", null, function(data) {
            alert($(data).find("string").text());
     });
 	$("#test").click(function(e){
-		ajaxGet("http://60.187.3.67:22322/TestWebService.asmx/Test", null, function(data) {
+		ajaxGet("http://60.187.2.6:22322/TestWebService.asmx/Test", null, function(data) {
 			var d=JSON.parse($(data).find("string").text())
 			for(var i=0;i<4;i++)
 			{
@@ -39,7 +39,7 @@ ajaxGet = function(url, data, func, sync) {
     });
 	});
 	$("#sub").click(function(e){
-		ajaxGet("http://60.187.3.67:22322/TestWebService.asmx/Submit", {name:$("#name").val()}, function(data) {
+		ajaxGet("http://60.187.2.6:22322/TestWebService.asmx/Submit", {name:$("#name").val()}, function(data) {
 			alert("success")
 			var d=JSON.parse($(data).find("string").text());
 			$("#reply").html(d);
